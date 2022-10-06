@@ -2392,8 +2392,43 @@ is invariant under
 \clearpage
 
 \section{Complex Manifolds}
+\begin{intu}
+    A complex manifold admits a complex structure in which each coordinate neighbourhood is homeomorphic to $\mathbb{C}^m$ and the transition from one coordinate system to the other is analytic.
+\end{intu}
+
 \subsection{Complex Manifolds}
+\begin{definition}[Holomorphic function]
+    A complex-valued function $f:\mathbb{C}^m\to\mathbb{C}$ is \textbf{holomorphic} if $f=f_1+\ii f_2$ satisfies the \textbf{Cauchy-Riemann relations} for each argument $z^\mu=x^\mu+\ii y^\mu$,
+    \begin{align}
+        \pdv{f_1}{x^\mu}=\pdv{f_2}{y^\mu}\quad\pdv{f_2}{x^\mu}=-\pdv{f_1}{y^\mu}.
+    \end{align}
+\end{definition}
+A map $(f^1,\dots,f^n):\mathbb{C}^m\to\mathbb{C}^n$ is called holomorphic if each function $f^\lambda\ (1\leq\lambda\leq n)$ is holomorphic.
+\subsubsection{Definitions}
+\begin{definition}[Complex manifold]
+    $M$ is a \textbf{complex manifold} if :
+    \begin{enumerate}
+        \item $M$ is a topological space 
+        \item $M$ is provided with a family of pairs $\{(U_i,\phi_i)\}$
+        \item $\{U_i\}$ is a family of open sets which covers $M$.
+              The map $\phi_i$ is a homeomorphism from $U_i$ to an open subset $U$ of $\mathbb{C}^m$.\snm
+        \item Given $U_i$ and $U_j$ such that $U_i\cap U_j\neq\emptyset$, the map $\psi_{ji}\equiv\phi_j\circ\phi_i^{-1}$ from $\phi_i(U_i\cap U_j)$ to $\phi_j(U_i\cap U_j)$ is holomorphic.
+    \end{enumerate}
+\end{definition}
+\snt{Hence $M$ is even dimensional.}
+The number $m$ is called the \textit{complex dimension} of $M$ and is denoted as $\dim_{\mathbb{C}}=m$.
+The real dimension $2m$ is denoted by $\dim_\mathbb{R} M$ or simply $\dim M$.
+
+\subsubsection{Examples}
 \subsection{Calculus on Complex Manifolds}
+\subsubsection{Holomorphic Maps}
+\subsubsection{Complexifications}
+\subsubsection{Almost Complex Structure}
+\subsection{Complex Differential Forms}
+\subsubsection{Complexification of Real Differential Forms}
+
+\clearpage
+\section{Fibre Bundles}
 
 
 
