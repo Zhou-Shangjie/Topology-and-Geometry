@@ -103,6 +103,64 @@ If $f$ is defined by some explicit formula, we write
 
 \subsection{Topological Spaces}
 \subsubsection{Definitions}
+\begin{definition}[Topological space]
+    Let $X$ be any set and $\mathcal{T}=\left\{U_i\vert i\in I\right\}$ denote a certain collection of subsets of $X$.
+    The pair $(X,\mathcal{T})$ is a topological space if $\mathcal{T}$ satisfies the following requirements
+    \begin{enumerate}
+        \item $\emptyset,X\in\mathcal{T}$
+        \item If $J$ is any (maybe infinite) subset of $I$, the family $\left\{U_j\vert j\in J\right\}$ satisfies $\cup_{j\in J}U_j\in \mathcal{T}$.
+        \item If $K$ is any finite subset of $I$, the family $\left\{U_k\vert k\in K\right\}$ satisfies $\cap_{k\in K}U_k\in\mathcal{T}$.
+    \end{enumerate}
+    The $U_i$ are called the open sets and $\mathcal{T}$ is said to give a topology to $X$.
+\end{definition}
+
+\subsubsection{Continuous Maps}
+\begin{definition}[Continuous map]
+    Let $X$ and $Y$ be topological spaces.
+    A map $f:X\to Y$ is continuous if the inverse image of an open set in $Y$ is an open set in $X$.
+\end{definition}
+
+\subsubsection{Neighbourhoods and Hausdorff Spaces}
+\begin{definition}[Neighbourhood]
+    Suppose $\mathcal{T}$ gives a topology to $X$.
+    $N$ is a neighbourhood of a point $x\in X$ if $N$ is a subset of $X$ and $N$ contains some (at least one) open set $U_i$ to which $x$ belongs.
+    If $N$ is also a open set in $\mathcal{T}$, then we call $N$ a open neighbourhood.
+\end{definition}
+
+\begin{definition}[Hausdorff]
+    A topological space $(X,\mathcal{T})$ is called a Hausdorff space if, for an arbitrary pair of distinct points $x,x'\in X$, there always exist neighbourhoods $U_x$ of $x$ and $U_{x'}$ of $x'$ such that $U_x\cup U_{x'}=\emptyset$.
+\end{definition}
+
+\subsubsection{Closed set}
+\begin{definition}[Closed set]
+    Let $(X,\mathcal{T})$ be a topological space.
+    A subset of $A$ of $X$ is closed if its complement in $X$ is an open set, that is $X_A\in\mathcal{T}$.
+\end{definition}
+
+\begin{definition}[Closure, interior and boundary]
+    Let $(X,\mathcal{T})$ be a topological space and $A\subset X$.
+    \begin{itemize}
+        \item The closure of $A$ is the smallest closed set that contains $A$ and is denoted by $\bar{A}$.
+        \item The interior of $A$ is the largest open subset of $A$ and is denoted by $A^\circ$.
+        \item The boundary $b(A)$ (also often denoted by $\partial A$) of $A$ is the complement of $A^\circ$ in $A$, that is $b(A)\equiv A-A^\circ$.
+    \end{itemize}
+\end{definition}
+
+\subsubsection{Compactness}
+\begin{definition}[Covering]
+    Let $(X,\mathcal{T})$ be a topological space.
+    A family $\left\{A_i\vert i\in I\right\}$ of subsets of $X$ is called a covering of $X$, if 
+    \begin{equation}
+        \bigcup_{i\in I} A_i=X.
+    \end{equation}
+    If all the $A_i$ are open sets of $\mathcal{T}$, then the covering is called an open covering.
+\end{definition}
+
+\begin{definition}[Compactness]
+    Let $(X,\mathcal{T})$ be a topological space.
+    The set $X$ is compact if, for every open covering $\left\{U_i\vert i\in I\right\}$, there exists a finite subset $J$ of $I$ such that $\left\{U_j\vert j\in J\right\}$ is also a covering of $X$.
+\end{definition}
+
 \subsection{Homeomorphisms and Topological Invariants}
 \subsubsection{Homeomorphisms}
 \begin{intu}
