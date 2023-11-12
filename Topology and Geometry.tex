@@ -78,6 +78,30 @@ If a point $(a,b)\in X\times X$ is in a relation $R$, then we write $aRb$.
     \end{itemize}
     Here $\vb*{u}, \vb*{v}, \vb*{w}$ and $c,d\in K$ and $1$ is the unit element of $K$.
 \end{definition}
+In this note, we only consider vector spaces over $\mathbb{R}$ or $\mathbb{C}$.
+
+\begin{definition}[Convex combination]
+    If $V$ is a vector space, we call elements $\vb*{v}'$ in $V$ convex combinations of $\vb*{v}_1,\vb*{v}_2,\dots,\vb*{v}_n\in V$ if it satisfies the following form:
+    \begin{equation}
+        v'=\alpha_1 \vb*{v}_1+\alpha_2 \vb*{v}_2+\dots \alpha_n \vb*{v}_n
+    \end{equation}
+    where $\alpha_1,\alpha_2,\dots,\alpha_n$ are positive real numbers and $\sum_{i=1}^{n}\alpha_i=1$.
+\end{definition}
+
+\begin{definition}[Convex set]
+    Let $V$ be a vector space and $K\subset V$.
+    The set $K$ is said to be convex if any convex combination of elements in $K$ is still an element in $K$.
+\end{definition}
+
+\begin{definition}[Extreme point]
+    A extreme point of a convex set $K$ is a point $x\in K$ with the property: there does not exist $y,z\in K$ and $t\in(0,1)$ such that $y\neq z$ and $x=ty+(1-t)z$.
+    The set of all extreme points of $K$ is denoted by $\text{extreme}(K)$.
+\end{definition}
+
+\begin{definition}[Convex hull]
+    The convex hull (or convex envelope) of a given set $X$ is defined to be the set of all convex combinations of points in $X$.
+\end{definition}
+
 \subsubsection{Linear Maps, Images and Kernels}
 \begin{theorem}
     If $f:V\to W$ is a linear map, then
@@ -131,7 +155,7 @@ If a point $(a,b)\in X\times X$ is in a relation $R$, then we write $aRb$.
     If $N$ is also a open set in $\mathcal{T}$, then we call $N$ a open neighbourhood.
 \end{definition}
 
-\begin{definition}[Hausdorff]
+\begin{definition}[Hausdorff space]
     A topological space $(X,\mathcal{T})$ is called a Hausdorff space if, for an arbitrary pair of distinct points $x,x'\in X$, there always exist neighbourhoods $U_x$ of $x$ and $U_{x'}$ of $x'$ such that $U_x\cup U_{x'}=\emptyset$.
 \end{definition}
 
@@ -141,11 +165,21 @@ If a point $(a,b)\in X\times X$ is in a relation $R$, then we write $aRb$.
     A subset of $A$ of $X$ is closed if its complement in $X$ is an open set, that is $X_A\in\mathcal{T}$.
 \end{definition}
 
+\begin{definition}[Limit point]
+    Let $S$ be a subset of a topological space $X$.
+    A point $x\in X$ is a limit point of $S$ if every neighbourhood of $x$ contains at lease one point of $S$ different from $x$ it self.
+\end{definition}
+
+\begin{definition}[Derived set]
+    Let $(X,\mathcal{T})$ be a topological space and $S\subset X$.
+    The derived set of $S$ is defined to be the set of limit points of $S$ and is often denoted by $S'$.
+\end{definition}
+
 \begin{definition}[Closure, interior and boundary]
     Let $(X,\mathcal{T})$ be a topological space and $A\subset X$.
     \begin{itemize}
-        \item The closure of $A$ is the smallest closed set that contains $A$ and is denoted by $\bar{A}$.
-        \item The interior of $A$ is the largest open subset of $A$ and is denoted by $A^\circ$.
+        \item The closure of $A$ is defined to be $A\cup A'$ ($A'$ is the derived set) and is denoted by $\bar{A}$.
+        \item The interior of $A$ is defined to be the union of all open subsets of $A$ and is denoted by $A^\circ$.
         \item The boundary $b(A)$ (also often denoted by $\partial A$) of $A$ is the complement of $A^\circ$ in $A$, that is $b(A)\equiv A-A^\circ$.
     \end{itemize}
 \end{definition}
@@ -2012,7 +2046,7 @@ In summary, we have the following diagram (for a Riemannian manifold)
 
 \subsubsection{The Laplacian, Harmonic Forms and the Hodge Decomposition Theorem}
 \begin{definition}[Laplacian]
-    The \textbf{Laplacian} $\Delta:\Omega^r(M)\to\Omega^r(M)$ is definced by
+    The \textbf{Laplacian} $\Delta:\Omega^r(M)\to\Omega^r(M)$ is defined by
     \begin{align}
         \Delta\equiv(\md+\md^\dagger)^2=\md\md^\dagger+\md^\dagger\md.
     \end{align}
