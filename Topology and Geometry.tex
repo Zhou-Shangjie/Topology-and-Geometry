@@ -102,6 +102,14 @@ In this note, we only consider vector spaces over $\mathbb{R}$ or $\mathbb{C}$.
     The convex hull (or convex envelope) of a given set $X$ is defined to be the set of all convex combinations of points in $X$.
 \end{definition}
 
+\begin{definition}[Cone]
+    A subset $C$ of a vector space $V$ is called a cone if for $\alpha>0$ and each $x\in C$, the element $\alpha x$ is in $C$.
+\end{definition}
+
+\begin{definition}[Convex cone]
+    A cone $C$ in a vector space $V$ is called a convex cone if $C$ is convex.
+\end{definition}
+
 \subsubsection{Linear Maps, Images and Kernels}
 \begin{theorem}
     If $f:V\to W$ is a linear map, then
@@ -2015,10 +2023,9 @@ This expression shows that the product is symmetric:
 \end{property}
 
 In summary, we have the following diagram (for a Riemannian manifold)
-\begin{center}
-    \includegraphics{figures/riemannian geometry/commutative/fig.pdf}.
-\end{center}
-
+        \begin{center}
+            \includegraphics{figures/riemannian geometry/commutative/fig.pdf}
+        \end{center}
 \begin{theorem}
     Let $(M,g)$ be a compact orientable manifold without a boundary and $\alpha\in\Omega^r(M)$, $\beta\in\Omega^{r-1}(M)$.
     Then
