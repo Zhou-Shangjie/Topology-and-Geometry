@@ -474,7 +474,7 @@ It implies that the Euler characteristic can relate geometry to algebra\sidenote
     \end{align}
 \end{definition}
 
-\subsubsection{Homotopy}
+\subsubsection{Homotopy\label{sec:homotopy1}}
 \begin{definition}[Homotopy]
     Let $\alpha,\beta:I\to X$ be loops at $x_0$.
     They are said to be \textbf{homotopic}, written as $\alpha\sim\beta$, if there exists a \textit{continuous} map $F:I\times I\to X$ such that
@@ -549,14 +549,80 @@ It implies that the Euler characteristic can relate geometry to algebra\sidenote
 \end{corollary}
 
 \begin{definition}[Retract and retraction]
-    Let $R(\neq0)$ be a subspace of $X$.
+    Let $R(\neq0)$ be a subspace of a topological space $X$.
     If there exists a continuous map $f:X\to R$ such that $\eval{f}_{R}=\text{id}_R$, $R$ is called a \textbf{retract} of $X$ and $f$ a \textbf{retraction}.
 \end{definition}
 
-\subsection{Examples of Fundamental Groups}
+\subsection{Fundamental Groups of Circle and Torus}
+
 \subsection{Fundamental Groups of Polyhedra}
 \subsection{Higher homotopy groups}
+In \cref{sec:homotopy1}, the concepts were defined using an interval $I$. 
+Now we can generalize them by extending from $I$ to $I^n$.
+We can generlize the definition of loops in the following way
+\begin{definition}[n-Path]
+    Let $X$ be a topological space.
+    A \textit{continuous} map $\alpha:I^n\to X$ is called an \textbf{$n$-loop} with \textbf{base point} $x_0$ (or an $n$-loop at $x_0$) if $\alpha(\partial I^n)=x_0$.
+\end{definition}
+
+\begin{definition}[Homotopy\label{def:higherhomotopy}]
+    Let $X$ be a topological space and $\alpha,\beta:I^n\to X$ be $n$-loops at $x_0\in X$.
+    The map $\alpha$ is \textbf{homotopic} to $\beta$, denoted by $\alpha\sim\beta$, if there exixts a continuous map $F:I^n\times I\to X$ such that 
+    \begin{subequations}
+        \begin{align}
+            F(s_1,\dots,s_n,0)&=\alpha(s_1,\dots,s_n)\\
+            F(s_1,\dots,s_n,1)&=\beta(s_1,\dots,s_n)\\
+            F(s_1,\dots,s_n,t)&=x_0\qfor(s_1,\dots,s_n)\in\partial I^n, t\in I
+        \end{align}
+    \end{subequations}
+    $F$ is called a \textbf{homotopy} between $\alpha$ and $\beta$.
+\end{definition}
+\begin{proposition}
+    The generalized relation $\alpha\sim\beta$ defined in \cref{def:higherhomotopy} is an equivalence relation.
+\end{proposition}
+The equivalent classes defined by \cref{def:higherhomotopy} are called homotopy classes.
+We denote the homotopy class of an $n$-path $\alpha$ by $[\alpha]$.
+
+\begin{definition}[$n$th Homotopy Group\label{def:higherhomotopygp}]
+    Let $X$ be a topological space.
+    The set of homotopy classes of $n$-loops ($n\geq1$) at $x_0\in X$ is denoted by $\pi_n(X,x_0)$ and called the \textbf{$n$th homotopy group} at $x_0$.
+    $\pi_n(X,x_0)$ is called the higher homotopy group if $n\geq2$.
+\end{definition}
+
+We have a natural product between homotopy classes:
+\begin{equation}
+    [\alpha]\ast[\beta]\equiv[\alpha\ast\beta]\label{eq:homotopy:prod}
+\end{equation}
+\begin{lemma}
+    The product defined by \cref{eq:homotopy:prod} is independent of the representatives.
+\end{lemma}
+\begin{proposition}
+    $\pi_n(X,x_0)$ is a group with product defined in \cref{eq:homotopy:prod}.
+\end{proposition}
+
+\begin{remark}
+    In \cref{def:higherhomotopygp}, the $n=0$ case was excluded and now we consider the case $\pi_0(X,x_0)$ here.
+    Note $I^0=\{0\}$ and $\partial I^0=\emptyset$. 
+    Consider $\alpha,\beta:\{0\}\to X$ with $\alpha(0)=x$ and $\beta(0)=y$.
+    We can define $\alpha\sim\beta$ if there exists an continuous map $F:\{0\}\times I\to X$ such that $F(0,0)=x$ and $F(0,1)=y$.
+    This clearly shows that $\alpha\sim\beta$ if and only if $x$ and $y$ can be connected by a curve in $X$ which means they are in the same (arcwise) connected component.
+    Note that
+    \begin{itemize}
+        \item This equivalence relation is independent of $x_0$ so we can just write $\pi_0(X)$
+        \item $\pi_0(X)$ is not a group and its elements label and count the (arcwise) connected components of $X$.
+    \end{itemize}
+\end{remark}
+
 \subsection{General Properties of Higher Homotopy Groups}
+\paragraph{Higher homotopy groups are always Abelian}\ 
+\begin{proposition}
+    Let $X$ be a topological space.
+    For any $n$-loops at $x_0\in X$, $[\alpha]$ and $[\beta]$ satisfy 
+    \begin{equation}
+        [\alpha]\ast[\beta]=[\beta]\ast[\alpha].
+    \end{equation}
+\end{proposition}
+
 \subsection{Examples of Higher Homotopy Groups}
 \subsection{Orders in Condensed Matter Systems}
 \subsubsection{Order Parameter}
@@ -1445,13 +1511,15 @@ Take a chart $(U,\phi)$ with the coordinate $x=\phi(p)$ on $M$, and define $m^3$
     \nabla_\nu e_\mu\equiv\nabla_{e_\nu}e_\mu=e_\lambda\tensor{\Gamma}{^{\lambda}_{\nu\mu}}
 \end{align}
 where $\{e_\mu\}=\{\partial/\partial x^\mu\}$ is the coordinate basis in $T_p M$.
-
+\begin{remark}
+    Affine connection is not unique.
+\end{remark}
 Let $V=V^\mu e_\mu$ and $W=W^\nu e_\nu$ be elements of $T_p(M)$.
 Then
 \begin{align}
     \nabla_V W=V^\mu\left(\frac{\partial W^\lambda}{\partial x^\mu}+W^\nu \tensor{\Gamma}{^\lambda_{\mu\nu}}\right)e_\lambda.
 \end{align}
-We can see that the components of $\nabla_VW$ do not depend on the derivative of components of $V$ namely $\partial V^\lambda/\partial x^\mu$, so $\nabla_V W$ can be seen to be a generalization of directional derivative to tensors.
+We can see that the components of $\nabla_VW$ do not depend on $\partial V^\lambda/\partial x^\mu$, so $\nabla_V W$ can be seen to be a generalization of directional derivative to tensors.
 \subsubsection{Parallel Transport and Geodesics}
 
 \subsection{Curvature and Torsion}
@@ -1519,13 +1587,13 @@ We can see that the components of $\nabla_VW$ do not depend on the derivative of
 \end{proof}
 \subsection{Holonomy}
 \begin{definition}[Holonomy group]
-    Let $p$ be a point in $(M,g)$ and consider the set of closed loops at $p$, $\{c(t)|0\leq t\leq1,c(0)=c(1)=p\}$.
+    Let $p$ be a point in $(M,g)$ and consider the set of closed loops at $p$, $\{c:I\to M| c(0)=c(1)=p\}$.
     Take a vector $X\in T_p M$ and parallel transport $X$ along a curve $c(t)$.
     After a trip along $c(t)$, we end up with a new vector $X_c\in T_p M$.
     Thus, the loop $c(t)$ and the connection $\nabla$ induce a linear transformation
-    \begin{align}
+    \begin{equation}
         P_c:T_p M\to T_p M.
-    \end{align}
+    \end{equation}
     The set of these transformations is denoted by $H(p)$ and is called the \textbf{holonomy group} at $p$.
 \end{definition}
 \subsection{Isometries and Conformal Transformations}
