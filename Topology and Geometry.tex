@@ -586,7 +586,7 @@ We denote the homotopy class of an $n$-path $\alpha$ by $[\alpha]$.
 \begin{definition}[$n$th Homotopy Group\label{def:higherhomotopygp}]
     Let $X$ be a topological space.
     The set of homotopy classes of $n$-loops ($n\geq1$) at $x_0\in X$ is denoted by $\pi_n(X,x_0)$ and called the \textbf{$n$th homotopy group} at $x_0$.
-    $\pi_n(X,x_0)$ is called the higher homotopy group if $n\geq2$.
+    $\pi_n(X,x_0)$ is called the \textbf{higher homotopy group} if $n\geq2$.
 \end{definition}
 
 We have a natural product between homotopy classes:
@@ -622,6 +622,43 @@ We have a natural product between homotopy classes:
         [\alpha]\ast[\beta]=[\beta]\ast[\alpha].
     \end{equation}
 \end{proposition}
+
+\paragraph{Arcwise connectedness and higher homotopy groups}
+
+\paragraph{Homotopy invariance of higher homotopy groups}
+
+
+\paragraph{Higher homotopy groups of a product state}\ 
+\begin{proposition}
+    Let $X$ and $Y$ be arcwise connected topological spaces.
+    Then 
+    \begin{equation}
+        \pi_n(X\times Y)\cong \pi_n(X)\oplus\pi_n(Y)
+    \end{equation}
+\end{proposition}
+
+\subsection{Universal Covering Spaces and Higher Homotopy Groups}
+
+\begin{definition}[Covering Space]
+    Let $X$ and $\widetilde{X}$ be connected topological spaces.
+    The pair $(\widetilde{X},p)$, or simply $\widetilde{X}$, is called the \textbf{covering space} of $X$ if there exists a continuous map $p:\widetilde{X}\to X$ such that 
+    \begin{enumerate}
+        \item $p$ is surjective
+        \item for each $x\in X$, there exists a connected open set $U\subset X$ conntaining $x$, such that $p^{-1}(U)$ is a disjoint union of open sets in $\widetilde{X}$, each of which is mapped homeomorphically onto $U$ by $p$.
+    \end{enumerate}
+    If $\widetilde{X}$ is simply connected, $(\widetilde{X},p)$ is called the \textbf{universal covering space} of $X$.
+\end{definition}
+
+\begin{theorem}
+    Let $(\widetilde{X},p)$ be the universal covering space of a connected topological space $X$.
+    If $x_0\in X$ and $\widetilde{x}_0\in\widetilde{X}$ such that $p(\widetilde{x}_0)=x_0$, the induced homomorphism
+    \begin{equation}
+        p_\ast:\pi_n\left(\widetilde{X},\widetilde{x}_0\right)\to\pi_n(X,x_0)
+    \end{equation}
+    is an isomorphism for $n\geq 2$.
+\end{theorem}
+
+
 
 \subsection{Examples of Higher Homotopy Groups}
 \subsection{Orders in Condensed Matter Systems}
