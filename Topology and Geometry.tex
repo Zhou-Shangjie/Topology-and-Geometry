@@ -2640,7 +2640,30 @@ The real dimension $2m$ is denoted by $\dim_\mathbb{R} M$ or simply $\dim M$.
 \subsubsection{Complexification of Real Differential Forms}
 
 \clearpage
-\section{Fibre Bundles}
+\section{Fiber Bundles}
+
+\begin{definition}[Fiber Bundle\label{def:fiberbundle}]
+    A (differentiable) \textbf{fiber bundle} $(E,\pi,M,F,G)$ consists of the following elements 
+    \begin{enumerate}
+        \item A differentiable manifold $E$ called the total space. 
+        \item A differentiable manifold $M$ called the base space.
+        \item A differentiable manifold $F$ called the fiber (or typical fiber).
+        \item A surjection $\pi:E\to M$ called the projection.
+              The inverse image $\pi^{-1}(p)=F_p\cong F$ is called the fibre at $p$.
+        \item A Lie group $G$ called the structure group, which acts on $F$ on the left.
+        \item A set of open covering $\{U_i\}$ of $M$ with a diffeomorphism $\phi_i:U_i\times F\to\pi^{-1}(U_i)$ such that $\pi\circ\phi_i(p,f)=p$. 
+              $\phi_i$ is called the local trivialization.
+        \item If we write $\phi_i(p,f)=\phi_{i,p}(f)$, the map $\phi_{i,p}:F\to F_p$ is a diffeomorphism. 
+              On $U_i\cap U_j\neq\emptyset$, we require that $t_{ij}(p)\equiv\phi^{-1}_{i,p}\circ\phi_{j,p}:F\to F$ be an element of $G$.
+              The maps $t_{ij}$ are called the transition functions.
+    \end{enumerate}
+\end{definition}
+We often use $E\xrightarrow{\pi}M$ or simply $E$ to denote a fiber bundle $(E,\pi,M,F,G)$.
+From \cref{def:fiberbundle}, it can be seen that $\phi_i$ and $\phi_j$ are related by a smooth map $t_{ij}:U_i\cap U_j\to G$ as 
+\begin{equation}
+    \phi_j(p,f)=\phi_i(p,t_{ij}(p)f).
+\end{equation}
+
 
 
 
