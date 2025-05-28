@@ -2167,6 +2167,7 @@ In summary, we have the following diagram (for a Riemannian manifold)
         \Delta\equiv(\md+\md^\dagger)^2=\md\md^\dagger+\md^\dagger\md.
     \end{align}
 \end{definition}
+\
 \begin{example}[Explicit form of $\Delta:\Omega^0(M)\to\Omega^0(M)$]
     Let $f\in\mathcal{F}(M)$.
     Since $\md^\dagger f=0$, we have
@@ -2642,6 +2643,7 @@ The real dimension $2m$ is denoted by $\dim_\mathbb{R} M$ or simply $\dim M$.
 \clearpage
 \section{Fiber Bundles}
 
+\subsection{Fiber Bundle}
 \begin{definition}[Fiber Bundle\label{def:fiberbundle}]
     A (differentiable) \textbf{fiber bundle} $(E,\pi,M,F,G)$ consists of the following elements 
     \begin{enumerate}
@@ -2663,16 +2665,44 @@ From \cref{def:fiberbundle}, it can be seen that $\phi_i$ and $\phi_j$ are relat
 \begin{equation}
     \phi_j(p,f)=\phi_i(p,t_{ij}(p)f).
 \end{equation}
+\begin{property}
+    The transition functions satisfy the following relation 
+    \begin{subequations}
+        \begin{align}
+            t_{ii}(p)&=\text{id}_F\quad(p\in U_i)\\
+            t_{ij}(p)&=t_{ji}(p)^{-1}\quad(p\in U_i\cap U_j)\\
+            t_{ij}(p)\cdot t_{jk}(p)&=t_{ik}(p)\quad(p\in U_i\cap U_j\cap U_k)
+        \end{align}
+    \end{subequations}
+\end{property}
+
+
+\begin{definition}[Cross Section]
+    Let $E\xrightarrow{\pi}M$ be a fiber bundle.
+    A \textbf{cross section} or (a section) $s:M\to E$ is a smooth map which satisfies $\pi\circ s=\text{id}_M$.
+    The set of sections on $M$ is denoted by $\Gamma(M,F)$.
+\end{definition}
+\begin{remark}
+    We can also define local sections on $U\subset M$.
+    The set of local sections on $U$ is denoted by $\Gamma(U,F)$.
+    Not all fiber bundles admit global sections.
+\end{remark}
+
+\subsection{Vector Bundles}
+
+
+\subsection{Principal Bundles}
 
 
 
+\section{Connections on Fiber Bundles}
 
 \clearpage
 \bibliographystyle{jhep}
 \bibliography{ref}
 
 
-\clearpage
-\listoftheorems[ignoreall,title={List of Definitions}, onlynamed={definition}, swapnumber]
+%\clearpage
+%\listoftheorems[ignoreall,title={List of Definitions}, onlynamed={definition}, swapnumber]
 
 \end{document}
