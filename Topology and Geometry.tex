@@ -2653,7 +2653,7 @@ The real dimension $2m$ is denoted by $\dim_\mathbb{R} M$ or simply $\dim M$.
         \item A surjection $\pi:E\to M$ called the projection.
               The inverse image $\pi^{-1}(p)=F_p\cong F$ is called the fibre at $p$.
         \item A Lie group $G$ called the structure group, which acts on $F$ on the left.
-        \item A set of open covering $\{U_i\}$ of $M$ with a diffeomorphism $\phi_i:U_i\times F\to\pi^{-1}(U_i)$ such that $\pi\circ\phi_i(p,f)=p$. 
+        \item There should exist at least a set of open covering $\{U_i\}$ of $M$ with a diffeomorphism $\phi_i:U_i\times F\to\pi^{-1}(U_i)$ such that $\pi\circ\phi_i(p,f)=p$. 
               $\phi_i$ is called the local trivialization.
         \item If we write $\phi_i(p,f)=\phi_{i,p}(f)$, the map $\phi_{i,p}:F\to F_p$ is a diffeomorphism. 
               On $U_i\cap U_j\neq\emptyset$, we require that $t_{ij}(p)\equiv\phi^{-1}_{i,p}\circ\phi_{j,p}:F\to F$ be an element of $G$.
@@ -2692,6 +2692,29 @@ From \cref{def:fiberbundle}, it can be seen that $\phi_i$ and $\phi_j$ are relat
 
 
 \subsection{Principal Bundles}
+\subsubsection{Definitions}
+\begin{definition}[Principal Bundle]
+    In \cref{def:fiberbundle}, if the fiber $F$ is identical to the structure group $G$, then the fiber bundle is called a \textbf{principal bundle}.
+    A principal bundle $P\xrightarrow{\pi}M$ is also denoted by $P(M,G)$ and is often called a \textbf{$G$ bundle} over $M$. 
+\end{definition}
+
+In a principal bundle, we can also define the action of $G$ on $F$ on the right using the usual group multiplication and it also give us a right action on $P$:
+Let $\phi_i:U_i\times G\to \pi^{-1}(U_i)$ be the local trivialization given by $\phi_i^{-1}(u)=(p,g_i)$ where $u\in\pi^{-1}(U_i)$ and $p=\pi(u)$.
+The action of $G$ on $U\pi^{-1}(U_i)$ is defined by 
+\begin{equation}\label{eq:principalbundle_action1}
+    ua=\phi_i(p,g_i a)
+\end{equation}
+for any $a\in G$ and $u\in\pi^{-1}(p)$.
+\begin{proposition}
+    The right action of $G$ on $P$ defined in \cref{eq:principalbundle_action1} is independent of the local trivializations.
+\end{proposition}
+\begin{proof}
+    If $p\in U_i\cap U_j$, then 
+    \begin{equation}
+        ua=\phi_j(p,g_j a)=\phi_{j}(p,t_{ji}(p)g_i a)=\phi_i(p,g_i a)
+    \end{equation}
+    %where we can verify that $t_{ji}(p)\equiv\phi_{i,p}^{-1}\circ\phi_{j,p}=g_j g_i^{-1}$
+\end{proof}
 
 
 
