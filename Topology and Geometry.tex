@@ -2644,6 +2644,7 @@ The real dimension $2m$ is denoted by $\dim_\mathbb{R} M$ or simply $\dim M$.
 \section{Fiber Bundles}
 
 \subsection{Fiber Bundle}
+\subsubsection{Definitions}
 \begin{definition}[Fiber Bundle\label{def:fiberbundle}]
     A (differentiable) \textbf{fiber bundle} $(E,\pi,M,F,G)$ consists of the following elements 
     \begin{enumerate}
@@ -2651,22 +2652,26 @@ The real dimension $2m$ is denoted by $\dim_\mathbb{R} M$ or simply $\dim M$.
         \item A differentiable manifold $M$ called the base space.
         \item A differentiable manifold $F$ called the fiber (or typical fiber).
         \item A surjection $\pi:E\to M$ called the projection.
-              The inverse image $\pi^{-1}(p)=F_p\cong F$ is called the fibre at $p$.
+              Its inverse image should satisfy $F_p\equiv\pi^{-1}(p)\cong F$ and $F_p$ is called the fiber at $p$.
         \item A Lie group $G$ called the structure group, which acts on $F$ on the left.
+    \end{enumerate}
+    with the additional requirements
+    \begin{enumerate}
         \item There should exist at least a set of open covering $\{U_i\}$ of $M$ with a diffeomorphism $\phi_i:U_i\times F\to\pi^{-1}(U_i)$ such that $\pi\circ\phi_i(p,f)=p$. 
               $\phi_i$ is called the local trivialization.
         \item If we write $\phi_i(p,f)=\phi_{i,p}(f)$, the map $\phi_{i,p}:F\to F_p$ is a diffeomorphism. 
               On $U_i\cap U_j\neq\emptyset$, we require that $t_{ij}(p)\equiv\phi^{-1}_{i,p}\circ\phi_{j,p}:F\to F$ be an element of $G$.
               The maps $t_{ij}$ are called the transition functions.
+        \item If $\{U_i,\phi_i\}$ and $\{\widetilde{U}_i,\widetilde{\phi}_i\}$ satisfy the above requirements, then $\{U_i\cup \widetilde{U}_i,\phi_i\cup\widetilde{\phi}_i\}$ also satisfies the above requirements.
     \end{enumerate}
 \end{definition}
 We often use $E\xrightarrow{\pi}M$ or simply $E$ to denote a fiber bundle $(E,\pi,M,F,G)$.
 From \cref{def:fiberbundle}, it can be seen that $\phi_i$ and $\phi_j$ are related by a smooth map $t_{ij}:U_i\cap U_j\to G$ as 
-\begin{equation}
+\begin{equation}\label{eq:fiberbundle_transition}
     \phi_j(p,f)=\phi_i(p,t_{ij}(p)f).
 \end{equation}
 \begin{property}
-    The transition functions satisfy the following relation 
+    The transition functions satisfy the following relation from definition
     \begin{subequations}
         \begin{align}
             t_{ii}(p)&=\text{id}_F\quad(p\in U_i)\\
@@ -2679,7 +2684,7 @@ From \cref{def:fiberbundle}, it can be seen that $\phi_i$ and $\phi_j$ are relat
 
 \begin{definition}[Cross Section]
     Let $E\xrightarrow{\pi}M$ be a fiber bundle.
-    A \textbf{cross section} or (a section) $s:M\to E$ is a smooth map which satisfies $\pi\circ s=\text{id}_M$.
+    A \textbf{cross section} (or a section) $s:M\to E$ is a smooth map which satisfies $\pi\circ s=\text{id}_M$.
     The set of sections on $M$ is denoted by $\Gamma(M,F)$.
 \end{definition}
 \begin{remark}
@@ -2688,13 +2693,29 @@ From \cref{def:fiberbundle}, it can be seen that $\phi_i$ and $\phi_j$ are relat
     Not all fiber bundles admit global sections.
 \end{remark}
 
+\subsubsection{Reconstruction of Fiber Bundles}
+
+\begin{proposition}
+    For a given $M$, $F$, $G$, $\{U_i\}$ and $t_{ij}(p)$, the full fiber bundle $(E,\pi,M,F,G)$ can be reconstructed.
+\end{proposition}
+
+\subsection{Tangent Bundles}
+\begin{definition}[Tangent Bundle]
+    In \cref{def:fiberbundle}, the bundle is called a \textbf{tangent bundle} if 
+    \begin{equation}
+        E=TM\equiv\bigcup_{p\in M}T_p M
+    \end{equation}
+     and the projection is chosen to be the natural projection $\pi:TM\to M$.
+\end{definition}
+
+
 \subsection{Vector Bundles}
 
 
 \subsection{Principal Bundles}
 \subsubsection{Definitions}
 \begin{definition}[Principal Bundle]
-    In \cref{def:fiberbundle}, if the fiber $F$ is identical to the structure group $G$, then the fiber bundle is called a \textbf{principal bundle}.
+    In \cref{def:fiberbundle}, if the fiber $F$ is identical to the structure group $G$ and the group action is the usual group multiplication, then the fiber bundle is called a \textbf{principal bundle}.
     A principal bundle $P\xrightarrow{\pi}M$ is also denoted by $P(M,G)$ and is often called a \textbf{$G$ bundle} over $M$. 
 \end{definition}
 
@@ -2713,7 +2734,7 @@ for any $a\in G$ and $u\in\pi^{-1}(p)$.
     \begin{equation}
         ua=\phi_j(p,g_j a)=\phi_{j}(p,t_{ji}(p)g_i a)=\phi_i(p,g_i a)
     \end{equation}
-    %where we can verify that $t_{ji}(p)\equiv\phi_{i,p}^{-1}\circ\phi_{j,p}=g_j g_i^{-1}$
+    where we used $t_{ji}(p)\equiv\phi_{i,p}^{-1}\circ\phi_{j,p}=g_j g_i^{-1}$ and \cref{eq:fiberbundle_transition}.
 \end{proof}
 
 
