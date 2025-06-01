@@ -13,8 +13,8 @@
 \title{Topology and Geometry}
 \subheader{Notes}
 \author{Shangjie Zhou\orcidlink{0000-0001-9576-5011}}
-\affiliation{School of Physics and Technology, Wuhan University}
-\emailAdd{sjzhou@whu.edu.cn}
+\affiliation{Department of Physics and Astronomy, Purdue University}
+\emailAdd{ZhouShangjie@purdue.edu}
 \abstract{\textit{Last updated on: \today}\\Source files: \url{https://github.com/spaceofzsj/Conformal-Field-Theory/releases}\\Website: \url{https://spaceofzsj.github.io/ShangjieZhou/}}
 
 \maketitle
@@ -2662,7 +2662,8 @@ The real dimension $2m$ is denoted by $\dim_\mathbb{R} M$ or simply $\dim M$.
         \item If we write $\phi_i(p,f)=\phi_{i,p}(f)$, the map $\phi_{i,p}:F\to F_p$ is a diffeomorphism. 
               On $U_i\cap U_j\neq\emptyset$, we require that $t_{ij}(p)\equiv\phi^{-1}_{i,p}\circ\phi_{j,p}:F\to F$ be an element of $G$.
               The maps $t_{ij}$ are called the transition functions.
-        \item If $\{U_i,\phi_i\}$ and $\{\widetilde{U}_i,\widetilde{\phi}_i\}$ satisfy the above requirements, then $\{U_i\cup \widetilde{U}_i,\phi_i\cup\widetilde{\phi}_i\}$ also satisfies the above requirements.
+        \item For $\{U_i,\phi_i\}$ and $\{\widetilde{U}_i,\widetilde{\phi}_i\}$ that satisfy the above requirements, $(E,\pi,M,F,G,U_i,\phi_i)$ and $(E,\pi,M,F,G,\widetilde{U}_i,\widetilde{\phi}_i)$ are said to be equivalent if $\{U_i\cup \widetilde{U}_i,\phi_i\cup\widetilde{\phi}_i\}$ also satisfies the above requirements.
+              Fiber bundle is the equivalent class of $(E,\pi,M,F,G,U_i,\phi_i)$. (In contexts of physics, $\{U_i,\phi_i\}$ will be specified, so it is supressed here.)
     \end{enumerate}
 \end{definition}
 We often use $E\xrightarrow{\pi}M$ or simply $E$ to denote a fiber bundle $(E,\pi,M,F,G)$.
@@ -2721,9 +2722,9 @@ From \cref{def:fiberbundle}, it can be seen that $\phi_i$ and $\phi_j$ are relat
 
 In a principal bundle, we can also define the action of $G$ on $F$ on the right using the usual group multiplication and it also give us a right action on $P$:
 Let $\phi_i:U_i\times G\to \pi^{-1}(U_i)$ be the local trivialization given by $\phi_i^{-1}(u)=(p,g_i)$ where $u\in\pi^{-1}(U_i)$ and $p=\pi(u)$.
-The action of $G$ on $U\pi^{-1}(U_i)$ is defined by 
+The action of $G$ on $\pi^{-1}(U_i)$ is defined by 
 \begin{equation}\label{eq:principalbundle_action1}
-    ua=\phi_i(p,g_i a)
+    R_a:u\mapsto ua=\phi_i(p,g_i a)
 \end{equation}
 for any $a\in G$ and $u\in\pi^{-1}(p)$.
 \begin{proposition}
@@ -2740,6 +2741,21 @@ for any $a\in G$ and $u\in\pi^{-1}(p)$.
 
 
 \section{Connections on Fiber Bundles}
+
+\subsection{Connection on Principal Bundles}
+For a Lie group $G$, the left and right action are defined respectively by $L_g:h\mapsto gh$ and $R_g:h\mapsto hg$ for $g,h\in G$.
+$L_g$ and $R_g$ induce pushforwards $L_{g\ast}:T_h(G)\to T_{gh}(G)$ and $R_{g\ast}:T_h(G)\to T_{hg}(G)$.
+\subsubsection{Definitions}
+
+\begin{definition}[Connection]
+    Let $P(M,G)$ be a principal bundle.
+    A connection on $P$ is a unique seperation of the tangent space $T_u P$ into the vertical subspace $V_u P$ and the horizontal subspace $H_u P$ for any $u\in P$ such that 
+    \begin{enumerate}
+        \item $T_u P=H_u P\oplus V_u P$.
+        \item A smooth vector field $X$ on $P$ is seperated into smooth vector fields as $X=X^H+X^V$ such that $X^H\vert_u\in H_u P$ and $X^V\vert_u\in V_u P$.
+        \item $H_{ug}P=R_{g\ast}H_u P$ for arbitrary $g\in G$.
+    \end{enumerate}
+\end{definition}
 
 \clearpage
 \bibliographystyle{jhep}
